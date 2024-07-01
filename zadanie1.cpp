@@ -71,7 +71,7 @@ void show_histogram_svg(const vector<size_t>& bins, int font_size) {
     for (size_t bin : bins) {
         const double bin_width = bin * scaling_factor;
         svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin), font_size);
-        svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, "red", "#ffeeee");
+        svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, "gold", "#ffeeee");
         top += BIN_HEIGHT;
     }
     svg_end();
@@ -86,7 +86,7 @@ int main() {
     vector<size_t> bins = input_numbers(number_count);
 
     // Запрос размера шрифта у пользователя
-    int font_size = 12; // значение по умолчанию
+    int font_size = 12;
     cerr << "Enter font size (8-32): ";
     cin >> font_size;
     while (font_size < 8 || font_size > 32) {
